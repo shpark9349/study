@@ -43,16 +43,52 @@
 
 
 #### openstack as a service
-XaaS
-OaaS
+    XaaS
+    OaaS
 
 
 ## openstack core API
-Nova
-Neutron
-Keystone
-Cinder
-Glance
+    Nova
+    Neutron
+    Keystone
+    Cinder
+    Glance
 
-source code 변경관련 dev
+    source code 변경관련 dev
 
+## 링구조 설명(intel)
+    동작예시1)
+    HW(cpu)flag-kvm(driverzone과 userzone)-qemu-vcpu-vm
+                        -vmem-vm
+                        -vnic..
+    동작예시2)
+    OS단에서 처리2
+    kvm과 같은 역활의 분배 
+       --runc--
+    HW -cgroup     - CRI-O -container - app
+       -namespace
+       -seliux
+    
+    0 = H/W
+    원형 0~1 < 가장안쪽
+    driver zone - kernel space
+    ||
+    
+    kvm (intel, amd)
+    
+    ||
+    원형 2~3
+    user zone - user space
+
+## 리눅스 드라이버
+    virtio 반가상화 가속기능
+    전가상화 
+    vmware의 tools 설치 이후 가속
+
+## Kolla
+
+## TripleO
+
+## Ansible install
+
+## 

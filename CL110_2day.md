@@ -161,30 +161,107 @@ HCI 제품일
 #### 3.storage
     eth1= 내부
 
-테스트
-동작 : nmcli ->NM-demon->db->설정파일ifcfg
-명령어 : nmcli con sh
-cd /etc/NetworkManager
-cd /var/lib/NetworkManager timestamps 내용과 비교 date가 맞는상태유의
+    테스트
+    동작 : nmcli ->NM-demon->db->설정파일ifcfg
+    명령어 : nmcli con sh
+    cd /etc/NetworkManager
+    cd /var/lib/NetworkManager timestamps 내용과 비교 date가 맞는상태유의
 
-ifconfig -> ip 명령어
-[root@workstation ~]# cd /etc/default/
-[root@workstation default]# ll
-total 12
--rw-r--r--. 1 root root  289 Mar 15  2017 grub
--rw-r--r--. 1 root root 1756 Oct 28  2016 nss
--rw-r--r--. 1 root root  119 Jun 28  2016 useradd
-[root@workstation default]# cat grub 
-GRUB_TIMEOUT=1
-GRUB_DISTRIBUTOR="$(sed 's, release .*$,,g' /etc/system-release)"
-GRUB_DEFAULT=saved
-GRUB_DISABLE_SUBMENU=true
-GRUB_TERMINAL_OUTPUT="console"
-GRUB_CMDLINE_LINUX="console=tty0 crashkernel=auto no_timer_check net.ifnames=0 biosdevname=0 console=ttyS0,115200n8"
-GRUB_DISABLE_RECOVERY="true"
-[root@workstation default]# biosdevname=0
+    ifconfig -> ip 명령어
+    [root@workstation ~]# cd /etc/default/
+    [root@workstation default]# ll
+    total 12
+    -rw-r--r--. 1 root root  289 Mar 15  2017 grub
+    -rw-r--r--. 1 root root 1756 Oct 28  2016 nss
+    -rw-r--r--. 1 root root  119 Jun 28  2016 useradd
+    [root@workstation default]# cat grub 
+    GRUB_TIMEOUT=1
+    GRUB_DISTRIBUTOR="$(sed 's, release .*$,,g' /etc/system-release)"
+    GRUB_DEFAULT=saved
+    GRUB_DISABLE_SUBMENU=true
+    GRUB_TERMINAL_OUTPUT="console"
+    GRUB_CMDLINE_LINUX="console=tty0 crashkernel=auto no_timer_check net.ifnames=0 biosdevname=0 console=ttyS0,115200n8"
+    GRUB_DISABLE_RECOVERY="true"
+    [root@workstation default]# biosdevname=0
 
-적용
-grub2-mkconfig-o /etc/grub2.cfg
-dracut -f
+    적용
+    grub2-mkconfig-o /etc/grub2.cfg
+    dracut -f
+    
+    
+## allinone eth0
+    [root@allinone ~]# cat /etc/sysconfig/network-scripts/ifcfg-eth0
+    DEVICE=eth0
+    ONBOOT=yes
+    TYPE=OVSPort
+    DEVICETYPE=ovs
+    OVS_BRIDGE=br-ex
 
+## allinone eth1
+    [root@allinone ~]# cat /etc/sysconfig/network-scripts/ifcfg-eth1
+    DEVICE=eth1
+    BOOTPROTO=static
+    ONBOOT=yes
+    TYPE=Ethernet
+    USERCTL=yes
+    PEERDNS=no
+    IPV6INIT=no
+    IPADDR=172.24.250.11
+    NETMASK=255.255.255.0
+
+## allinone br
+    [root@allinone ~]# cat /etc/sysconfig/network-scripts/ifcfg-br-ex 
+    DEVICE=br-ex
+    BOOTPROTO=static
+    ONBOOT=yes
+    TYPE=OVSBridge
+    DEVICETYPE=ovs
+    USERCTL=yes
+    PEERDNS=yes
+    IPV6INIT=no
+    IPADDR=172.25.250.11
+    NETMASK=255.255.255.0
+    GATEWAY=172.25.250.254
+    DNS1=172.25.250.254
+    DOMAIN="lab.example.com example.com"
+
+## allinone lo
+    [root@allinone ~]# cat /etc/sysconfig/network-scripts/ifcfg-lo 
+    DEVICE=lo
+    IPADDR=127.0.0.1
+    NETMASK=255.0.0.0
+    NETWORK=127.0.0.0
+    # If you're having problems with gated making 127.0.0.0/8 a martian,
+    # you can change this to something else (255.255.255.255, for example)
+    BROADCAST=127.255.255.255
+    ONBOOT=yes
+    NAME=loopback
+
+## compute eth0
+    [root@compute1 ~]# cat /etc/sysconfig/network-scripts/ifcfg-eth0
+    DEVICE=eth0
+    BOOTPROTO=static
+    ONBOOT=yes
+    TYPE=Ethernet
+    USERCTL=yes
+    PEERDNS=yes
+    IPV6INIT=no
+    IPADDR=172.25.250.12
+    NETMASK=255.255.255.0
+    GATEWAY=172.25.250.254
+    DNS1=172.25.250.254
+    DOMAIN="lab.example.com example.com"
+
+## compute eth1
+    [root@compute1 ~]# cat /etc/sysconfig/network-scripts/ifcfg-eth1
+    DEVICE=eth1
+    BOOTPROTO=static
+    ONBOOT=yes
+    TYPE=Ethernet
+    USERCTL=yes
+    PEERDNS=no
+    IPV6INIT=no
+    IPADDR=172.24.250.12
+    NETMASK=255.255.255.0
+    
+    

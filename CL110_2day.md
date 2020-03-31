@@ -91,4 +91,45 @@
 
 ## Ansible install
 
-## 
+## 실습 명령어
+    [root@allinone ~]# rpm -qa |grep horizon
+    puppet-horizon-9.5.0-1.el7ost.noarch
+    python-django-horizon-10.0.2-1.el7ost.noarch
+    
+    [root@allinone ~]# cd /etc/httpd/conf.d/
+    [root@allinone conf.d]# ls
+    10-aodh_wsgi.conf            10-keystone_wsgi_main.conf  15-horizon_vhost.conf
+    10-gnocchi_wsgi.conf         15-default.conf             openstack-dashboard.conf
+    10-keystone_wsgi_admin.conf  15-horizon_ssl_vhost.conf
+    
+### 설명
+    user
+    |
+    httpd
+    |
+    horizon 대시보드
+    |
+    인증 API 요청
+    |
+    keystone SSO API endpoint**
+    |
+    endlpoint(internal,public,admin)
+    |
+    neutron networking,SDN**                              ##  VM  ##
+        (linuxbridge,iptables->nftables대체_7->8)
+    cinder Block storage*                                ##  VM  ##
+        (LVM2,iSCSI) 영구적인 데이터 확보위함
+    nova compute instance(vm)**                            ##  VM  ##
+        (qemu/kvm,libvirtd)
+    glance image,cinder or vm snap save,import/export**   ##  VM  ##
+        (impoer/export data를 넣고 뺄수있다)
+    heat?(n+c+n+g를 오토메이션관리)internal
+    ceilometer?계산 얼마나 사용하고있는지
+    swift?object storage  (latancy 길다)
+    
+## 명령어
+    yum install openstack-utils
+    openstack-service status
+    openstack-status
+    서비스의 상태를 확인
+    

@@ -147,6 +147,7 @@ network 터널링
 GRE cisco
 VxLan 자동 
 ovs 포트효율
+리눅스브릿지 L/B 
 vNIC 3개할당
 
 HCI 제품일
@@ -264,4 +265,9 @@ HCI 제품일
     IPADDR=172.24.250.12
     NETMASK=255.255.255.0
     
+## kernel backplane
+    eth1 - l/b
+    트래픽컨트롤
+    
+## user conrol
     

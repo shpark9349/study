@@ -132,4 +132,6 @@
     openstack-service status
     openstack-status
     서비스의 상태를 확인
+    rc 사용전과 후의 권한 확인할수 있음
+    위의명령어 sourc rc 사용전과 후의 차이
     

@@ -135,3 +135,56 @@
     rc 사용전과 후의 권한 확인할수 있음
     위의명령어 sourc rc 사용전과 후의 차이
     
+ ## 점심시간
+ 
+## 운영시 유의
+    node 1.controller
+         2.compute
+         3.storage
+         4.network
+         
+network 터널링
+GRE cisco
+VxLan 자동 
+ovs 포트효율
+vNIC 3개할당
+
+HCI 제품일
+성능극대를 위해 compute+network+storage
+뉴타니스 = con - com+sto
+
+#### 1.controller
+    eth0= 외부
+    eth1= 내부
+#### 2.compte    
+    eth1= 내부
+#### 3.storage
+    eth1= 내부
+
+테스트
+동작 : nmcli ->NM-demon->db->설정파일ifcfg
+명령어 : nmcli con sh
+cd /etc/NetworkManager
+cd /var/lib/NetworkManager timestamps 내용과 비교 date가 맞는상태유의
+
+ifconfig -> ip 명령어
+[root@workstation ~]# cd /etc/default/
+[root@workstation default]# ll
+total 12
+-rw-r--r--. 1 root root  289 Mar 15  2017 grub
+-rw-r--r--. 1 root root 1756 Oct 28  2016 nss
+-rw-r--r--. 1 root root  119 Jun 28  2016 useradd
+[root@workstation default]# cat grub 
+GRUB_TIMEOUT=1
+GRUB_DISTRIBUTOR="$(sed 's, release .*$,,g' /etc/system-release)"
+GRUB_DEFAULT=saved
+GRUB_DISABLE_SUBMENU=true
+GRUB_TERMINAL_OUTPUT="console"
+GRUB_CMDLINE_LINUX="console=tty0 crashkernel=auto no_timer_check net.ifnames=0 biosdevname=0 console=ttyS0,115200n8"
+GRUB_DISABLE_RECOVERY="true"
+[root@workstation default]# biosdevname=0
+
+적용
+grub2-mkconfig-o /etc/grub2.cfg
+dracut -f
+

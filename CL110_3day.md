@@ -107,7 +107,7 @@
     MainPID=1305 Id=openstack-glance-api.service ActiveState=active
     MainPID=1310 Id=openstack-glance-registry.service ActiveState=active
     
-#### 트러블 슈팅 nova log
+#### 트러블 슈팅포인트 nova log
     MainPID=1314 Id=openstack-nova-api.service ActiveState=active :REST API 처리 및 파일처리 (proxy)
         log: /var/log/nova/nova-api.log
     MainPID=1358 Id=openstack-nova-cert.service ActiveState=active :인증서 관리
@@ -123,3 +123,17 @@
     정보메시지(nova-manage) : /var/log/nova/nova-manage.log
     MainPID=2418 Id=openstack-nova-compute.service ActiveState=active : 하이퍼바이저 서비스,REST API/proxy/file handling
         log: /var/log/nova/nova-compute.log
+#### 트러블 슈팅 포인트 network
+    host 네트워크정보확인
+    ip addr show : 모든 실제 및 가상장치를 표시
+    ovs-vsctl show : 가상스위치의 인터페이스와 브릿지를 표시
+    ovs-dpctl show : 스위치의 데이터경로를 표시
+    openstack network list : 인스턴스에 연결된 네트워크를 식별할수있음
+    ip netns list :사용가능한 네트워크 네임스페이스 나열
+    
+    ip netns exec : 연결테스트에 용의
+        ex)ip netns exec qdhcp-xxxx-xx ping -c 3 192.168.0.7
+    ip netns exec : 네트워크구성확인
+        ex)ip netns exec qdhcp-xxxx-xx ip addr show
+            ovs-vsctl show 다시확인
+    ip netns qdhcp-xxxx-xx nc 192.168.0.7 22 

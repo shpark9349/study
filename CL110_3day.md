@@ -42,4 +42,28 @@
     # 확인
     echo $?
     
+### flavor
+    
+    어떤 host에서 생성할지 자원이 괜찮은지 확인후 
+    조건이 맞는 부분 할당 관련 추후 node가 많을시 설정하여 검색시간 단축
+    nova서비스에서 flavor 관리 meta data
+     
+    spec vcpu,vmem,vdisk 
+    
+    nova 서비스에서 스케줄러 서비스 관리 
+    /etc/nova/nova.conf 내용에 스케줄러 검색하면 확인가능
+    내용중 default 관련 필터값을 보면 이해가능
+    nova.conf over commit가능
+    하이퍼스레드 core 추상적 core로 할당유의
+    
+    cat /etc/nova/nova.conf |grep -Ev "^#|^$" | sed -e "s/^\[/\n\[/g"
+    
+    ephemeral disk : 임시디스크이나 설정을 ssd외 다른경로로 지정가능
+    DB는 1:1 vcpu할당권장
+    meta 추가가능
+    
+    block device 부분에서 iops제어가능
+    nic는 트래픽제어 아직불가 ( rx/tx 필터부분 )
+    
+    
     

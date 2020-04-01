@@ -137,3 +137,28 @@
         ex)ip netns exec qdhcp-xxxx-xx ip addr show
             ovs-vsctl show 다시확인
     ip netns qdhcp-xxxx-xx nc 192.168.0.7 22 
+
+
+### 테스트
+    user: user1
+    pass: redhat
+    project: proj_user1
+    role: _member_
+    
+    keystone_file: user1.rc
+    
+    flavor:m1.web
+        -vcpu :1
+        -vmem : 2048
+        -disk : 20
+    network
+        -name : internal
+        -IP range : 192.168.10.0/24
+        -Ip gw : 192.168.10.1
+    image
+        - down : http://content.example.com/courses/cl110/rhosp10.1/materials/osp-web.qcow2
+        - name : rhel7-small
+        
+#### 1 GUI
+    
+#### 2 Cli

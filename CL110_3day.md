@@ -88,11 +88,38 @@
 
 
 #### Nova instance 
+    controller
     [root@allinone ~]# openstack-service status nova
     MainPID=1314 Id=openstack-nova-api.service ActiveState=active :REST API 처리 및 파일처리 (proxy)
     MainPID=1358 Id=openstack-nova-cert.service ActiveState=active :인증서 관리
+    MainPID=1337 Id=openstack-nova-conductor.service ActiveState=active : B:nova -> DB N: nova-> conductor -> DB
+    MainPID=1334 Id=openstack-nova-consoleauth.service ActiveState=active :VNC/SPICE Token인증
+    MainPID=1325 Id=openstack-nova-novncproxy.service ActiveState=active :VNC HTML5버전(based JS)
+    MainPID=1352 Id=openstack-nova-scheduler.service ActiveState=active : compute 서버사용량 정보를 일정시간 반복실행 정보수집갱신
+        (설정가능 상화에 맞게 설정하면 수집하는 시간을 줄일수있음)
+    
+    
+    compute(L/B, OVS)
     MainPID=2418 Id=openstack-nova-compute.service ActiveState=active : 하이퍼바이저 서비스,REST API/proxy/file handling
-    MainPID=1337 Id=openstack-nova-conductor.service ActiveState=active
-    MainPID=1334 Id=openstack-nova-consoleauth.service ActiveState=active
-    MainPID=1325 Id=openstack-nova-novncproxy.service ActiveState=active
-    MainPID=1352 Id=openstack-nova-scheduler.service ActiveState=active
+    
+#### glance instance
+    [root@allinone ~]# openstack-service status glance
+    MainPID=1305 Id=openstack-glance-api.service ActiveState=active
+    MainPID=1310 Id=openstack-glance-registry.service ActiveState=active
+    
+#### 트러블 슈팅 nova log
+    MainPID=1314 Id=openstack-nova-api.service ActiveState=active :REST API 처리 및 파일처리 (proxy)
+        log: /var/log/nova/nova-api.log
+    MainPID=1358 Id=openstack-nova-cert.service ActiveState=active :인증서 관리
+        log:  /var/log/nova/nova-cert.log
+    MainPID=1337 Id=openstack-nova-conductor.service ActiveState=active : B:nova -> DB N: nova-> conductor -> DB
+        log: /var/log/nova/nova-conductor.log
+    MainPID=1334 Id=openstack-nova-consoleauth.service ActiveState=active :VNC/SPICE Token인증
+        log: /var/log/nova/nova-consoleauth.log
+    MainPID=1325 Id=openstack-nova-novncproxy.service ActiveState=active :VNC HTML5버전(based JS)
+        log: /var/log/nova/nova-novncproxy.log
+    MainPID=1352 Id=openstack-nova-scheduler.service ActiveState=active : compute 서버사용량 정보를 일정시간 반복실행 정보수집갱신
+        log: /var/log/nova/nova-scheduler.log
+    정보메시지(nova-manage) : /var/log/nova/nova-manage.log
+    MainPID=2418 Id=openstack-nova-compute.service ActiveState=active : 하이퍼바이저 서비스,REST API/proxy/file handling
+        log: /var/log/nova/nova-compute.log

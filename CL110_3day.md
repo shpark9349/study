@@ -33,3 +33,13 @@
     support
 
     -vhd 
+    
+    
+## keystone 관련
+    policy.json 파일관련 
+    admin 권한 이외 public / private / admin
+    권한 부분확인요망 rc 부분 cli command 관련 
+    # 확인
+    echo $?
+    
+    

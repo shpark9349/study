@@ -64,6 +64,8 @@
     
     block device 부분에서 iops제어가능
     nic는 트래픽제어 아직불가 ( rx/tx 필터부분 )
+    download 이미지 확인
+    qemu-img info
     
     
     

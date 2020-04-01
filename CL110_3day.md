@@ -67,5 +67,32 @@
 #### download 이미지 확인
     qemu-img info
     
+## network(metadata)
+    dnsmask
+        -dhcp,dns service
+    namespace
+        -Router,subnet 제공
+    -- vm에 네트워크 할당은 meta
+        네트워크 밑으로 subnet 여러개 가능 (PaaS와의 차이점)
+        
+        
+#### 실습
+    network create test1   기본적으로 
+    subnet create 
+    shared= admin만된다
     
-    
+    ip netns
+    ip netns uid ink 
+    virsh list
+    virsh domiflist 
+
+
+#### Nova instance 
+    [root@allinone ~]# openstack-service status nova
+    MainPID=1314 Id=openstack-nova-api.service ActiveState=active :REST API 처리 및 파일처리 (proxy)
+    MainPID=1358 Id=openstack-nova-cert.service ActiveState=active :인증서 관리
+    MainPID=2418 Id=openstack-nova-compute.service ActiveState=active : 하이퍼바이저 서비스,REST API/proxy/file handling
+    MainPID=1337 Id=openstack-nova-conductor.service ActiveState=active
+    MainPID=1334 Id=openstack-nova-consoleauth.service ActiveState=active
+    MainPID=1325 Id=openstack-nova-novncproxy.service ActiveState=active
+    MainPID=1352 Id=openstack-nova-scheduler.service ActiveState=active

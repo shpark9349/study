@@ -258,7 +258,7 @@ HCI 제품일
     DEVICE=eth1
     BOOTPROTO=static
     ONBOOT=yes
-    TYPE=Ethernet
+    TYPE=Ethernet   
     USERCTL=yes
     PEERDNS=no
     IPV6INIT=no
@@ -269,5 +269,6 @@ HCI 제품일
     eth1 - l/b
     트래픽컨트롤
     
-## user conrol
+## user control
+
     

@@ -194,11 +194,49 @@
         - down : http://content.example.com/courses/cl110/rhosp10.1/materials/osp-web.qcow2
         - name : rhel7-small
 #### 2 Cli
-    
+        4  openstack user create user1
+    8  openstack user list
+   14  openstack user create user1 --set-password redhat 
+   15  openstack user create user1 --password redhat  user1
+   16  openstack user create --password redhat user1
+   17  openstack project create proj_user1
+   18  openstack role add --user user1 --project proj_user1 _member_
+   26  openstack image create --file osp-small.qcow2 
+   27  openstack image create --file osp-small.qcow2 rhel7-small
+   31  openstack image create --file osp-small.qcow2 rhel7-small
+   32  openstack create network internal
+   33  openstack network create internal
+   34  openstack subnet create --help
+   35  openstack subnet create --subnet-range 192.168.10.0/24 --gateway=192.168.10.1 --network internal sub-internal
+   37  openstack flavor create --help
+   38  openstack flavor create --vcpu 1 --ram 2048 --disk 20 m1.web 
+   40  openstack server create --image rhel7-small --network internal --flavor m1.web rhel7-server
+   41  openstack server create --image rhel7-small --nic net-id=internal --flavor m1.web rhel7-server
+   64  openstack subnet list
+   65  openstack router add subnet sub-internal R1
+   66  openstack router add subnet R1 sub-internal
+   67  openstack network create --external external
+   68  openstack network create external
+   69  source admin.rc 
+   70  openstack network set
+   71  openstack network set --share --external external
+   72  source user1
+   73  source user1.rc 
+   74  openstack network show external
+   75  openstack router --help
+   76  openstack subnet list
+   77  openstack subnet create --subnet-range 172.25.250.0/24 --gateway 172.25.250.254 --network external --dns-nameserver 172.25.250.254  sub-external
+   78  openstack router
+   79  openstack 
+   80  neutron --help
+   81  neutron router-gateway-set 
+   82  neutron router-gateway-set  R1 external
+   83  history 
     
     
     
 #### 외부통신 실습
     openstack router create R1
     openstack router add subnet R1 sub-internal  <같은이름 가능하여 혼용방지>
+    
     

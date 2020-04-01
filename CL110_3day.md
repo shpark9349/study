@@ -141,16 +141,22 @@
 
 ### 테스트
     user: user1
+    :openstack user create --password redhat --project proj_user1 --enable user1
     pass: redhat
     project: proj_user1
+    :openstack project create --enable proj_user1
     role: _member_
-    
+    *base
+
     keystone_file: user1.rc
     
     flavor:m1.web
         -vcpu :1
         -vmem : 2048
         -disk : 20
+    :flavor create --vcpus 1 --ram 2048 --disk 20 m1.web
+    
+    
     network
         -name : internal
         -IP range : 192.168.10.0/24
@@ -158,7 +164,41 @@
     image
         - down : http://content.example.com/courses/cl110/rhosp10.1/materials/osp-web.qcow2
         - name : rhel7-small
+    instance 
+        - name : rhel7-server
+        - network : internal
+        - image : rhel7-small
         
 #### 1 GUI
+    time : 1609
     
+    user: user1
+    pass: redhat
+    project: proj_user1
+    role: _member_
+    
+    keystone_file: user1.rc
+    
+    flavor:m1.web <<admin
+        -vcpu :1
+        -vmem : 2048
+        -disk : 20
+    network  
+        -name : internal <<유저
+        -IP range : 192.168.10.0/24
+        -Ip gw : 192.168.10.1
+        -name : external <<admin
+        -IP range : 192.168.10.0/24
+        -Ip gw : 192.168.10.1
+    image
+        - down : http://content.example.com/courses/cl110/rhosp10.1/materials/osp-web.qcow2
+        - name : rhel7-small
 #### 2 Cli
+    
+    
+    
+    
+#### 외부통신 실습
+    openstack router create R1
+    openstack router add subnet R1 sub-internal  <같은이름 가능하여 혼용방지>
+    

@@ -1,4 +1,3 @@
-## packstack answer file 예시
     [root@allinone ~]# cat answers.txt 
     [general]
 

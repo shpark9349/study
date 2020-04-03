@@ -47,3 +47,6 @@ lsmod | grep vxlan
 
 ip link |grep vxlan
 
+network작업정보조회
+openvswitch log 
+  openvswitch/conf.db 파일조회

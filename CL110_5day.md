@@ -25,7 +25,13 @@
   big data 사하라 API 활용 메모리 할당 과점유 별도 node 권장
   물리적인 데이터속도 SSD DAS 권장 10G이상  70%
   
-#### 
+  
+
+#### stacks
+
+
+#### Ceilometer
+
 
  rhel7 ~ 8 메이저 버젼 변경으로
  yum  + dnf
@@ -35,4 +41,9 @@
 ** satellite 기반 repo관리 ( 찾아보자 )
 * 수동 repo서버 구성 관리 (재구성확인)
 
- 
+
+lsmod | grep vxlan
+로 사용되어지는 메모리와 모듈확인
+
+ip link |grep vxlan
+

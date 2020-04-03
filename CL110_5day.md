@@ -50,3 +50,7 @@ ip link |grep vxlan
 network작업정보조회
 openvswitch log 
   openvswitch/conf.db 파일조회
+
+
+  분산스위치(vmware와 동일한 스위치기능) 
+  DVR 

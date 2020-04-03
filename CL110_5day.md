@@ -31,6 +31,10 @@
 
 
 #### Ceilometer
+  Mongodb 테스트 용도이며 관련 제공자가 자체적으로 수집
+  딜레이가 느려서 
+  dom
+  livertd를 관리하고 모니터하는 대체 고민
 
 
  rhel7 ~ 8 메이저 버젼 변경으로
@@ -54,3 +58,4 @@ openvswitch log
 
   분산스위치(vmware와 동일한 스위치기능) 
   DVR 
+ㄴ

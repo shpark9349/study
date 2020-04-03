@@ -58,4 +58,5 @@ openvswitch log
 
   분산스위치(vmware와 동일한 스위치기능) 
   DVR 
-ㄴ
+  
+  control 정보 남기는거

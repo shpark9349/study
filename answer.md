@@ -32,424 +32,424 @@
     # Specify 'y' to install OpenStack Compute (nova). ['y', 'n']
     CONFIG_NOVA_INSTALL=y
 
-# Specify 'y' to install OpenStack Networking (neutron); otherwise,
-# Compute Networking (nova) will be used. ['y', 'n']
-CONFIG_NEUTRON_INSTALL=y
-
-# Specify 'y' to install OpenStack Dashboard (horizon). ['y', 'n']
-CONFIG_HORIZON_INSTALL=y
-
-# Specify 'y' to install OpenStack Object Storage (swift). ['y', 'n']
-CONFIG_SWIFT_INSTALL=y
-
-# Specify 'y' to install OpenStack Metering (ceilometer). ['y', 'n']
-CONFIG_CEILOMETER_INSTALL=y
-
-# Specify 'y' to install OpenStack Telemetry Alarming (Aodh). Note
-# Aodh requires Ceilometer to be installed as well. ['y', 'n']
-CONFIG_AODH_INSTALL=y
-
-# Specify 'y' to install OpenStack Metering as a Service (gnocchi).
-# ['y', 'n']
-CONFIG_GNOCCHI_INSTALL=y
-
-# Specify 'y' to install OpenStack Data Processing (sahara). In case
-# of sahara installation packstack also installs heat.['y', 'n']
-CONFIG_SAHARA_INSTALL=n
-
-# Specify 'y' to install OpenStack Orchestration (heat). ['y', 'n']
-CONFIG_HEAT_INSTALL=y
-
-# Specify 'y' to install OpenStack Database (trove) ['y', 'n']
-CONFIG_TROVE_INSTALL=n
-
-# Specify 'y' to install OpenStack Bare Metal Provisioning (ironic).
-# ['y', 'n']
-CONFIG_IRONIC_INSTALL=n
-
-# Specify 'y' to install the OpenStack Client packages (command-line
-# tools). An admin "rc" file will also be installed. ['y', 'n']
-CONFIG_CLIENT_INSTALL=y
-
-# Comma-separated list of NTP servers. Leave plain if Packstack
-# should not install ntpd on instances.
-CONFIG_NTP_SERVERS=172.25.254.254
-
-# Specify 'y' to install Nagios to monitor OpenStack hosts. Nagios
-# provides additional tools for monitoring the OpenStack environment.
-# ['n']
-CONFIG_NAGIOS_INSTALL=n
-
-# Comma-separated list of servers to be excluded from the
-# installation. This is helpful if you are running Packstack a second
-# time with the same answer file and do not want Packstack to
-# overwrite these server's configurations. Leave empty if you do not
-# need to exclude any servers.
-EXCLUDE_SERVERS=
-
-# Specify 'y' if you want to run OpenStack services in debug mode;
-# otherwise, specify 'n'. ['y', 'n']
-CONFIG_DEBUG_MODE=n
-
-# Server on which to install OpenStack services specific to the
-# controller role (for example, API servers or dashboard).
-CONFIG_CONTROLLER_HOST=172.25.250.11
-
-# List the servers on which to install the Compute service.
-CONFIG_COMPUTE_HOSTS=172.25.250.11
-
-# List of servers on which to install the network service such as
-# Compute networking (nova network) or OpenStack Networking (neutron).
-CONFIG_NETWORK_HOSTS=172.25.250.11
-
-# Specify 'y' if you want to use VMware vCenter as hypervisor and
-# storage; otherwise, specify 'n'. ['y', 'n']
-CONFIG_VMWARE_BACKEND=n
-
-# Specify 'y' if you want to use unsupported parameters. This should
-# be used only if you know what you are doing. Issues caused by using
-# unsupported options will not be fixed before the next major release.
-# ['y', 'n']
-CONFIG_UNSUPPORTED=n
-
-# Specify 'y' if you want to use subnet addresses (in CIDR format)
-# instead of interface names in following options:
-# CONFIG_NOVA_COMPUTE_PRIVIF, CONFIG_NOVA_NETWORK_PRIVIF,
-# CONFIG_NOVA_NETWORK_PUBIF, CONFIG_NEUTRON_OVS_BRIDGE_IFACES,
-# CONFIG_NEUTRON_LB_INTERFACE_MAPPINGS, CONFIG_NEUTRON_OVS_TUNNEL_IF.
-# This is useful for cases when interface names are not same on all
-# installation hosts.
-CONFIG_USE_SUBNETS=n
-
-# IP address of the VMware vCenter server.
-CONFIG_VCENTER_HOST=
-
-# User name for VMware vCenter server authentication.
-CONFIG_VCENTER_USER=
-
-# Password for VMware vCenter server authentication.
-CONFIG_VCENTER_PASSWORD=
-
-# Comma separated list of names of the VMware vCenter clusters. Note:
-# if multiple clusters are specified each one is mapped to one
-# compute, otherwise all computes are mapped to same cluster.
-CONFIG_VCENTER_CLUSTER_NAMES=
-
-# (Unsupported!) Server on which to install OpenStack services
-# specific to storage servers such as Image or Block Storage services.
-CONFIG_STORAGE_HOST=172.25.250.11
-
-# (Unsupported!) Server on which to install OpenStack services
-# specific to OpenStack Data Processing (sahara).
-CONFIG_SAHARA_HOST=172.25.250.11
-
-# Specify 'y' to enable the EPEL repository (Extra Packages for
-# Enterprise Linux). ['y', 'n']
-CONFIG_USE_EPEL=n
-
-# Comma-separated list of URLs for any additional yum repositories,
-# to use for installation.
-CONFIG_REPO=
-
-# Specify 'y' to enable the RDO testing repository. ['y', 'n']
-CONFIG_ENABLE_RDO_TESTING=n
-
-# To subscribe each server with Red Hat Subscription Manager, include
-# this with CONFIG_RH_PW.
-CONFIG_RH_USER=
-
-# To subscribe each server to receive updates from a Satellite
-# server, provide the URL of the Satellite server. You must also
-# provide a user name (CONFIG_SATELLITE_USERNAME) and password
-# (CONFIG_SATELLITE_PASSWORD) or an access key (CONFIG_SATELLITE_AKEY)
-# for authentication.
-CONFIG_SATELLITE_URL=
+    # Specify 'y' to install OpenStack Networking (neutron); otherwise,
+    # Compute Networking (nova) will be used. ['y', 'n']
+    CONFIG_NEUTRON_INSTALL=y
+
+    # Specify 'y' to install OpenStack Dashboard (horizon). ['y', 'n']
+    CONFIG_HORIZON_INSTALL=y
+
+    # Specify 'y' to install OpenStack Object Storage (swift). ['y', 'n']
+    CONFIG_SWIFT_INSTALL=y
+
+    # Specify 'y' to install OpenStack Metering (ceilometer). ['y', 'n']
+    CONFIG_CEILOMETER_INSTALL=y
+
+    # Specify 'y' to install OpenStack Telemetry Alarming (Aodh). Note
+    # Aodh requires Ceilometer to be installed as well. ['y', 'n']
+    CONFIG_AODH_INSTALL=y
+
+    # Specify 'y' to install OpenStack Metering as a Service (gnocchi).
+    # ['y', 'n']
+    CONFIG_GNOCCHI_INSTALL=y
+
+    # Specify 'y' to install OpenStack Data Processing (sahara). In case
+    # of sahara installation packstack also installs heat.['y', 'n']
+    CONFIG_SAHARA_INSTALL=n
+
+    # Specify 'y' to install OpenStack Orchestration (heat). ['y', 'n']
+    CONFIG_HEAT_INSTALL=y
+
+    # Specify 'y' to install OpenStack Database (trove) ['y', 'n']
+    CONFIG_TROVE_INSTALL=n
+
+    # Specify 'y' to install OpenStack Bare Metal Provisioning (ironic).
+    # ['y', 'n']
+    CONFIG_IRONIC_INSTALL=n
+
+    # Specify 'y' to install the OpenStack Client packages (command-line
+    # tools). An admin "rc" file will also be installed. ['y', 'n']
+    CONFIG_CLIENT_INSTALL=y
+
+    # Comma-separated list of NTP servers. Leave plain if Packstack
+    # should not install ntpd on instances.
+    CONFIG_NTP_SERVERS=172.25.254.254
+
+    # Specify 'y' to install Nagios to monitor OpenStack hosts. Nagios
+    # provides additional tools for monitoring the OpenStack environment.
+    # ['n']
+    CONFIG_NAGIOS_INSTALL=n
+
+    # Comma-separated list of servers to be excluded from the
+    # installation. This is helpful if you are running Packstack a second
+    # time with the same answer file and do not want Packstack to
+    # overwrite these server's configurations. Leave empty if you do not
+    # need to exclude any servers.
+    EXCLUDE_SERVERS=
+
+    # Specify 'y' if you want to run OpenStack services in debug mode;
+    # otherwise, specify 'n'. ['y', 'n']
+    CONFIG_DEBUG_MODE=n
+
+    # Server on which to install OpenStack services specific to the
+    # controller role (for example, API servers or dashboard).
+    CONFIG_CONTROLLER_HOST=172.25.250.11
+
+    # List the servers on which to install the Compute service.
+    CONFIG_COMPUTE_HOSTS=172.25.250.11
+
+    # List of servers on which to install the network service such as
+    # Compute networking (nova network) or OpenStack Networking (neutron).
+    CONFIG_NETWORK_HOSTS=172.25.250.11
+
+    # Specify 'y' if you want to use VMware vCenter as hypervisor and
+    # storage; otherwise, specify 'n'. ['y', 'n']
+    CONFIG_VMWARE_BACKEND=n
+
+    # Specify 'y' if you want to use unsupported parameters. This should
+    # be used only if you know what you are doing. Issues caused by using
+    # unsupported options will not be fixed before the next major release.
+    # ['y', 'n']
+    CONFIG_UNSUPPORTED=n
+
+    # Specify 'y' if you want to use subnet addresses (in CIDR format)
+    # instead of interface names in following options:
+    # CONFIG_NOVA_COMPUTE_PRIVIF, CONFIG_NOVA_NETWORK_PRIVIF,
+    # CONFIG_NOVA_NETWORK_PUBIF, CONFIG_NEUTRON_OVS_BRIDGE_IFACES,
+    # CONFIG_NEUTRON_LB_INTERFACE_MAPPINGS, CONFIG_NEUTRON_OVS_TUNNEL_IF.
+    # This is useful for cases when interface names are not same on all
+    # installation hosts.
+    CONFIG_USE_SUBNETS=n
+
+    # IP address of the VMware vCenter server.
+    CONFIG_VCENTER_HOST=
+
+    # User name for VMware vCenter server authentication.
+    CONFIG_VCENTER_USER=
+
+    # Password for VMware vCenter server authentication.
+    CONFIG_VCENTER_PASSWORD=
+
+    # Comma separated list of names of the VMware vCenter clusters. Note:
+    # if multiple clusters are specified each one is mapped to one
+    # compute, otherwise all computes are mapped to same cluster.
+    CONFIG_VCENTER_CLUSTER_NAMES=
+
+    # (Unsupported!) Server on which to install OpenStack services
+    # specific to storage servers such as Image or Block Storage services.
+    CONFIG_STORAGE_HOST=172.25.250.11
+
+    # (Unsupported!) Server on which to install OpenStack services
+    # specific to OpenStack Data Processing (sahara).
+    CONFIG_SAHARA_HOST=172.25.250.11
+
+    # Specify 'y' to enable the EPEL repository (Extra Packages for
+    # Enterprise Linux). ['y', 'n']
+    CONFIG_USE_EPEL=n
+
+    # Comma-separated list of URLs for any additional yum repositories,
+    # to use for installation.
+    CONFIG_REPO=
+
+    # Specify 'y' to enable the RDO testing repository. ['y', 'n']
+    CONFIG_ENABLE_RDO_TESTING=n
+
+    # To subscribe each server with Red Hat Subscription Manager, include
+    # this with CONFIG_RH_PW.
+    CONFIG_RH_USER=
+
+    # To subscribe each server to receive updates from a Satellite
+    # server, provide the URL of the Satellite server. You must also
+    # provide a user name (CONFIG_SATELLITE_USERNAME) and password
+    # (CONFIG_SATELLITE_PASSWORD) or an access key (CONFIG_SATELLITE_AKEY)
+    # for authentication.
+    CONFIG_SATELLITE_URL=
 
-# Specify a Satellite 6 Server to register to. If not specified,
-# Packstack will register the system to the Red Hat server. When this
-# option is specified, you also need to set the Satellite 6
-# organization (CONFIG_RH_SAT6_ORG) and an activation key
-# (CONFIG_RH_SAT6_KEY).
-CONFIG_RH_SAT6_SERVER=
+    # Specify a Satellite 6 Server to register to. If not specified,
+    # Packstack will register the system to the Red Hat server. When this
+    # option is specified, you also need to set the Satellite 6
+    # organization (CONFIG_RH_SAT6_ORG) and an activation key
+    # (CONFIG_RH_SAT6_KEY).
+    CONFIG_RH_SAT6_SERVER=
 
-# To subscribe each server with Red Hat Subscription Manager, include
-# this with CONFIG_RH_USER.
-CONFIG_RH_PW=
+    # To subscribe each server with Red Hat Subscription Manager, include
+    # this with CONFIG_RH_USER.
+    CONFIG_RH_PW=
 
-# Specify 'y' to enable RHEL optional repositories. ['y', 'n']
-CONFIG_RH_OPTIONAL=y
+    # Specify 'y' to enable RHEL optional repositories. ['y', 'n']
+    CONFIG_RH_OPTIONAL=y
 
-# HTTP proxy to use with Red Hat Subscription Manager.
-CONFIG_RH_PROXY=
+    # HTTP proxy to use with Red Hat Subscription Manager.
+    CONFIG_RH_PROXY=
 
-# Specify a Satellite 6 Server organization to use when registering
-# the system.
-CONFIG_RH_SAT6_ORG=
+    # Specify a Satellite 6 Server organization to use when registering
+    # the system.
+    CONFIG_RH_SAT6_ORG=
 
-# Specify a Satellite 6 Server activation key to use when registering
-# the system.
-CONFIG_RH_SAT6_KEY=
+    # Specify a Satellite 6 Server activation key to use when registering
+    # the system.
+    CONFIG_RH_SAT6_KEY=
 
-# Port to use for Red Hat Subscription Manager's HTTP proxy.
-CONFIG_RH_PROXY_PORT=
+    # Port to use for Red Hat Subscription Manager's HTTP proxy.
+    CONFIG_RH_PROXY_PORT=
 
-# User name to use for Red Hat Subscription Manager's HTTP proxy.
-CONFIG_RH_PROXY_USER=
+    # User name to use for Red Hat Subscription Manager's HTTP proxy.
+    CONFIG_RH_PROXY_USER=
 
-# Password to use for Red Hat Subscription Manager's HTTP proxy.
-CONFIG_RH_PROXY_PW=
+    # Password to use for Red Hat Subscription Manager's HTTP proxy.
+    CONFIG_RH_PROXY_PW=
 
-# User name to authenticate with the RHN Satellite server; if you
-# intend to use an access key for Satellite authentication, leave this
-# blank.
-CONFIG_SATELLITE_USER=
+    # User name to authenticate with the RHN Satellite server; if you
+    # intend to use an access key for Satellite authentication, leave this
+    # blank.
+    CONFIG_SATELLITE_USER=
 
-# Password to authenticate with the RHN Satellite server; if you
-# intend to use an access key for Satellite authentication, leave this
-# blank.
-CONFIG_SATELLITE_PW=
+    # Password to authenticate with the RHN Satellite server; if you
+    # intend to use an access key for Satellite authentication, leave this
+    # blank.
+    CONFIG_SATELLITE_PW=
 
-# Access key for the Satellite server; if you intend to use a user
-# name and password for Satellite authentication, leave this blank.
-CONFIG_SATELLITE_AKEY=
+    # Access key for the Satellite server; if you intend to use a user
+    # name and password for Satellite authentication, leave this blank.
+    CONFIG_SATELLITE_AKEY=
 
-# Certificate path or URL of the certificate authority to verify that
-# the connection with the Satellite server is secure. If you are not
-# using Satellite in your deployment, leave this blank.
-CONFIG_SATELLITE_CACERT=
+    # Certificate path or URL of the certificate authority to verify that
+    # the connection with the Satellite server is secure. If you are not
+    # using Satellite in your deployment, leave this blank.
+    CONFIG_SATELLITE_CACERT=
 
-# Profile name that should be used as an identifier for the system in
-# RHN Satellite (if required).
-CONFIG_SATELLITE_PROFILE=
+    # Profile name that should be used as an identifier for the system in
+    # RHN Satellite (if required).
+    CONFIG_SATELLITE_PROFILE=
 
-# Comma-separated list of flags passed to the rhnreg_ks command.
-# Valid flags are: novirtinfo, norhnsd, nopackages ['novirtinfo',
-# 'norhnsd', 'nopackages']
-CONFIG_SATELLITE_FLAGS=
+    # Comma-separated list of flags passed to the rhnreg_ks command.
+    # Valid flags are: novirtinfo, norhnsd, nopackages ['novirtinfo',
+    # 'norhnsd', 'nopackages']
+    CONFIG_SATELLITE_FLAGS=
 
-# HTTP proxy to use when connecting to the RHN Satellite server (if
-# required).
-CONFIG_SATELLITE_PROXY=
+    # HTTP proxy to use when connecting to the RHN Satellite server (if
+    # required).
+    CONFIG_SATELLITE_PROXY=
 
-# User name to authenticate with the Satellite-server HTTP proxy.
-CONFIG_SATELLITE_PROXY_USER=
+    # User name to authenticate with the Satellite-server HTTP proxy.
+    CONFIG_SATELLITE_PROXY_USER=
 
-# User password to authenticate with the Satellite-server HTTP proxy.
-CONFIG_SATELLITE_PROXY_PW=
+    # User password to authenticate with the Satellite-server HTTP proxy.
+    CONFIG_SATELLITE_PROXY_PW=
 
-# Specify filepath for CA cert file. If CONFIG_SSL_CACERT_SELFSIGN is
-# set to 'n' it has to be preexisting file.
-CONFIG_SSL_CACERT_FILE=/etc/pki/tls/certs/localhost.crt
+    # Specify filepath for CA cert file. If CONFIG_SSL_CACERT_SELFSIGN is
+    # set to 'n' it has to be preexisting file.
+    CONFIG_SSL_CACERT_FILE=/etc/pki/tls/certs/localhost.crt
 
-# Specify filepath for CA cert key file. If
-# CONFIG_SSL_CACERT_SELFSIGN is set to 'n' it has to be preexisting
-# file.
-CONFIG_SSL_CACERT_KEY_FILE=/etc/pki/tls/private/localhost.key
+    # Specify filepath for CA cert key file. If
+    # CONFIG_SSL_CACERT_SELFSIGN is set to 'n' it has to be preexisting
+    # file.
+    CONFIG_SSL_CACERT_KEY_FILE=/etc/pki/tls/private/localhost.key
 
-# Enter the path to use to store generated SSL certificates in.
-CONFIG_SSL_CERT_DIR=/root/packstackca
+    # Enter the path to use to store generated SSL certificates in.
+    CONFIG_SSL_CERT_DIR=/root/packstackca
 
-# Specify 'y' if you want Packstack to pregenerate the CA
-# Certificate.
-CONFIG_SSL_CACERT_SELFSIGN=y
+    # Specify 'y' if you want Packstack to pregenerate the CA
+    # Certificate.
+    CONFIG_SSL_CACERT_SELFSIGN=y
 
-# Enter the ssl certificates subject country.
-CONFIG_SSL_CERT_SUBJECT_C=--
+    # Enter the ssl certificates subject country.
+    CONFIG_SSL_CERT_SUBJECT_C=--
 
-# Enter the ssl certificates subject state.
-CONFIG_SSL_CERT_SUBJECT_ST=State
+    # Enter the ssl certificates subject state.
+    CONFIG_SSL_CERT_SUBJECT_ST=State
 
-# Enter the ssl certificates subject location.
-CONFIG_SSL_CERT_SUBJECT_L=City
+    # Enter the ssl certificates subject location.
+    CONFIG_SSL_CERT_SUBJECT_L=City
 
-# Enter the ssl certificates subject organization.
-CONFIG_SSL_CERT_SUBJECT_O=openstack
+    # Enter the ssl certificates subject organization.
+    CONFIG_SSL_CERT_SUBJECT_O=openstack
 
-# Enter the ssl certificates subject organizational unit.
-CONFIG_SSL_CERT_SUBJECT_OU=packstack
+    # Enter the ssl certificates subject organizational unit.
+    CONFIG_SSL_CERT_SUBJECT_OU=packstack
 
-# Enter the ssl certificates subject common name.
-CONFIG_SSL_CERT_SUBJECT_CN=allinone.lab.example.com
+    # Enter the ssl certificates subject common name.
+    CONFIG_SSL_CERT_SUBJECT_CN=allinone.lab.example.com
 
-CONFIG_SSL_CERT_SUBJECT_MAIL=admin@allinone.lab.example.com
+    CONFIG_SSL_CERT_SUBJECT_MAIL=admin@allinone.lab.example.com
 
-# Service to be used as the AMQP broker. Allowed values are: rabbitmq
-# ['rabbitmq']
-CONFIG_AMQP_BACKEND=rabbitmq
+    # Service to be used as the AMQP broker. Allowed values are: rabbitmq
+    # ['rabbitmq']
+    CONFIG_AMQP_BACKEND=rabbitmq
 
-# IP address of the server on which to install the AMQP service.
-CONFIG_AMQP_HOST=172.25.250.11
+    # IP address of the server on which to install the AMQP service.
+    CONFIG_AMQP_HOST=172.25.250.11
 
-# Specify 'y' to enable SSL for the AMQP service. ['y', 'n']
-CONFIG_AMQP_ENABLE_SSL=n
+    # Specify 'y' to enable SSL for the AMQP service. ['y', 'n']
+    CONFIG_AMQP_ENABLE_SSL=n
 
-# Specify 'y' to enable authentication for the AMQP service. ['y',
-# 'n']
-CONFIG_AMQP_ENABLE_AUTH=n
+    # Specify 'y' to enable authentication for the AMQP service. ['y',
+    # 'n']
+    CONFIG_AMQP_ENABLE_AUTH=n
 
-# Password for the NSS certificate database of the AMQP service.
-CONFIG_AMQP_NSS_CERTDB_PW=PW_PLACEHOLDER
+    # Password for the NSS certificate database of the AMQP service.
+    CONFIG_AMQP_NSS_CERTDB_PW=PW_PLACEHOLDER
 
-# User for AMQP authentication.
-CONFIG_AMQP_AUTH_USER=amqp_user
+    # User for AMQP authentication.
+    CONFIG_AMQP_AUTH_USER=amqp_user
 
-# Password for AMQP authentication.
-CONFIG_AMQP_AUTH_PASSWORD=PW_PLACEHOLDER
+    # Password for AMQP authentication.
+    CONFIG_AMQP_AUTH_PASSWORD=PW_PLACEHOLDER
 
-# IP address of the server on which to install MariaDB. If a MariaDB
-# installation was not specified in CONFIG_MARIADB_INSTALL, specify
-# the IP address of an existing database server (a MariaDB cluster can
-# also be specified).
-CONFIG_MARIADB_HOST=172.25.250.11
+    # IP address of the server on which to install MariaDB. If a MariaDB
+    # installation was not specified in CONFIG_MARIADB_INSTALL, specify
+    # the IP address of an existing database server (a MariaDB cluster can
+    # also be specified).
+    CONFIG_MARIADB_HOST=172.25.250.11
 
-# User name for the MariaDB administrative user.
-CONFIG_MARIADB_USER=root
+    # User name for the MariaDB administrative user.
+    CONFIG_MARIADB_USER=root
 
-# Password for the MariaDB administrative user.
-CONFIG_MARIADB_PW=79614a281ad244ab
+    # Password for the MariaDB administrative user.
+    CONFIG_MARIADB_PW=79614a281ad244ab
 
-# Password to use for the Identity service (keystone) to access the
-# database.
-CONFIG_KEYSTONE_DB_PW=c3aa03bc905c4b0a
+    # Password to use for the Identity service (keystone) to access the
+    # database.
+    CONFIG_KEYSTONE_DB_PW=c3aa03bc905c4b0a
 
-# Enter y if cron job for removing soft deleted DB rows should be
-# created.
-CONFIG_KEYSTONE_DB_PURGE_ENABLE=True
+    # Enter y if cron job for removing soft deleted DB rows should be
+    # created.
+    CONFIG_KEYSTONE_DB_PURGE_ENABLE=True
 
-# Default region name to use when creating tenants in the Identity
-# service.
-CONFIG_KEYSTONE_REGION=RegionOne
+    # Default region name to use when creating tenants in the Identity
+    # service.
+    CONFIG_KEYSTONE_REGION=RegionOne
 
-# Token to use for the Identity service API.
-CONFIG_KEYSTONE_ADMIN_TOKEN=0ef13a083c614594a1da4a86f339753e
+    # Token to use for the Identity service API.
+    CONFIG_KEYSTONE_ADMIN_TOKEN=0ef13a083c614594a1da4a86f339753e
 
-# Email address for the Identity service 'admin' user.  Defaults to
-CONFIG_KEYSTONE_ADMIN_EMAIL=root@localhost
+    # Email address for the Identity service 'admin' user.  Defaults to
+    CONFIG_KEYSTONE_ADMIN_EMAIL=root@localhost
 
-# User name for the Identity service 'admin' user.  Defaults to
-# 'admin'.
-CONFIG_KEYSTONE_ADMIN_USERNAME=admin
+    # User name for the Identity service 'admin' user.  Defaults to
+    # 'admin'.
+    CONFIG_KEYSTONE_ADMIN_USERNAME=admin
 
-# Password to use for the Identity service 'admin' user.
-CONFIG_KEYSTONE_ADMIN_PW=redhat
+    # Password to use for the Identity service 'admin' user.
+    CONFIG_KEYSTONE_ADMIN_PW=redhat
 
-# Password to use for the Identity service 'demo' user.
-CONFIG_KEYSTONE_DEMO_PW=708db5545c6d42e1
+    # Password to use for the Identity service 'demo' user.
+    CONFIG_KEYSTONE_DEMO_PW=708db5545c6d42e1
 
-# Identity service API version string. ['v2.0', 'v3']
-CONFIG_KEYSTONE_API_VERSION=v2.0
+    # Identity service API version string. ['v2.0', 'v3']
+    CONFIG_KEYSTONE_API_VERSION=v2.0
 
-# Identity service token format (UUID or PKI). The recommended format
-# for new deployments is UUID. ['UUID', 'PKI']
-CONFIG_KEYSTONE_TOKEN_FORMAT=UUID
+    # Identity service token format (UUID or PKI). The recommended format
+    # for new deployments is UUID. ['UUID', 'PKI']
+    CONFIG_KEYSTONE_TOKEN_FORMAT=UUID
 
-# Type of Identity service backend (sql or ldap). ['sql', 'ldap']
-CONFIG_KEYSTONE_IDENTITY_BACKEND=sql
+    # Type of Identity service backend (sql or ldap). ['sql', 'ldap']
+    CONFIG_KEYSTONE_IDENTITY_BACKEND=sql
 
-# URL for the Identity service LDAP backend.
-CONFIG_KEYSTONE_LDAP_URL=ldap://172.25.250.11
+    # URL for the Identity service LDAP backend.
+    CONFIG_KEYSTONE_LDAP_URL=ldap://172.25.250.11
 
-# User DN for the Identity service LDAP backend.  Used to bind to the
-# LDAP server if the LDAP server does not allow anonymous
-# authentication.
-CONFIG_KEYSTONE_LDAP_USER_DN=
+    # User DN for the Identity service LDAP backend.  Used to bind to the
+    # LDAP server if the LDAP server does not allow anonymous
+    # authentication.
+    CONFIG_KEYSTONE_LDAP_USER_DN=
 
-# User DN password for the Identity service LDAP backend.
-CONFIG_KEYSTONE_LDAP_USER_PASSWORD=
+    # User DN password for the Identity service LDAP backend.
+    CONFIG_KEYSTONE_LDAP_USER_PASSWORD=
 
-# Base suffix for the Identity service LDAP backend.
-CONFIG_KEYSTONE_LDAP_SUFFIX=
+    # Base suffix for the Identity service LDAP backend.
+    CONFIG_KEYSTONE_LDAP_SUFFIX=
 
-# Query scope for the Identity service LDAP backend. Use 'one' for
-# onelevel/singleLevel or 'sub' for subtree/wholeSubtree ('base' is
-# not actually used by the Identity service and is therefore
-# deprecated). ['base', 'one', 'sub']
-CONFIG_KEYSTONE_LDAP_QUERY_SCOPE=one
+    # Query scope for the Identity service LDAP backend. Use 'one' for
+    # onelevel/singleLevel or 'sub' for subtree/wholeSubtree ('base' is
+    # not actually used by the Identity service and is therefore
+    # deprecated). ['base', 'one', 'sub']
+    CONFIG_KEYSTONE_LDAP_QUERY_SCOPE=one
 
-# Query page size for the Identity service LDAP backend.
-CONFIG_KEYSTONE_LDAP_PAGE_SIZE=-1
+    # Query page size for the Identity service LDAP backend.
+    CONFIG_KEYSTONE_LDAP_PAGE_SIZE=-1
 
-# User subtree for the Identity service LDAP backend.
-CONFIG_KEYSTONE_LDAP_USER_SUBTREE=
+    # User subtree for the Identity service LDAP backend.
+    CONFIG_KEYSTONE_LDAP_USER_SUBTREE=
 
-# User query filter for the Identity service LDAP backend.
-CONFIG_KEYSTONE_LDAP_USER_FILTER=
+    # User query filter for the Identity service LDAP backend.
+    CONFIG_KEYSTONE_LDAP_USER_FILTER=
 
-# User object class for the Identity service LDAP backend.
-CONFIG_KEYSTONE_LDAP_USER_OBJECTCLASS=
+    # User object class for the Identity service LDAP backend.
+    CONFIG_KEYSTONE_LDAP_USER_OBJECTCLASS=
 
-# User ID attribute for the Identity service LDAP backend.
-CONFIG_KEYSTONE_LDAP_USER_ID_ATTRIBUTE=
+    # User ID attribute for the Identity service LDAP backend.
+    CONFIG_KEYSTONE_LDAP_USER_ID_ATTRIBUTE=
 
-# User name attribute for the Identity service LDAP backend.
-CONFIG_KEYSTONE_LDAP_USER_NAME_ATTRIBUTE=
+    # User name attribute for the Identity service LDAP backend.
+    CONFIG_KEYSTONE_LDAP_USER_NAME_ATTRIBUTE=
 
-# User email address attribute for the Identity service LDAP backend.
-CONFIG_KEYSTONE_LDAP_USER_MAIL_ATTRIBUTE=
+    # User email address attribute for the Identity service LDAP backend.
+    CONFIG_KEYSTONE_LDAP_USER_MAIL_ATTRIBUTE=
 
-# User-enabled attribute for the Identity service LDAP backend.
-CONFIG_KEYSTONE_LDAP_USER_ENABLED_ATTRIBUTE=
+    # User-enabled attribute for the Identity service LDAP backend.
+    CONFIG_KEYSTONE_LDAP_USER_ENABLED_ATTRIBUTE=
 
-# Bit mask integer applied to user-enabled attribute for the Identity
-# service LDAP backend. Indicate the bit that the enabled value is
-# stored in if the LDAP server represents "enabled" as a bit on an
-# integer rather than a boolean. A value of "0" indicates the mask is
-# not used (default). If this is not set to "0", the typical value is
-# "2", typically used when
-# "CONFIG_KEYSTONE_LDAP_USER_ENABLED_ATTRIBUTE = userAccountControl".
-CONFIG_KEYSTONE_LDAP_USER_ENABLED_MASK=-1
+    # Bit mask integer applied to user-enabled attribute for the Identity
+    # service LDAP backend. Indicate the bit that the enabled value is
+    # stored in if the LDAP server represents "enabled" as a bit on an
+    # integer rather than a boolean. A value of "0" indicates the mask is
+    # not used (default). If this is not set to "0", the typical value is
+    # "2", typically used when
+    # "CONFIG_KEYSTONE_LDAP_USER_ENABLED_ATTRIBUTE = userAccountControl".
+    CONFIG_KEYSTONE_LDAP_USER_ENABLED_MASK=-1
 
-# Value of enabled attribute which indicates user is enabled for the
-# Identity service LDAP backend. This should match an appropriate
-# integer value if the LDAP server uses non-boolean (bitmask) values
-# to indicate whether a user is enabled or disabled. If this is not
-# set as 'y', the typical value is "512". This is typically used when
-# "CONFIG_KEYSTONE_LDAP_USER_ENABLED_ATTRIBUTE = userAccountControl".
-CONFIG_KEYSTONE_LDAP_USER_ENABLED_DEFAULT=TRUE
+    # Value of enabled attribute which indicates user is enabled for the
+    # Identity service LDAP backend. This should match an appropriate
+    # integer value if the LDAP server uses non-boolean (bitmask) values
+    # to indicate whether a user is enabled or disabled. If this is not
+    # set as 'y', the typical value is "512". This is typically used when
+    # "CONFIG_KEYSTONE_LDAP_USER_ENABLED_ATTRIBUTE = userAccountControl".
+    CONFIG_KEYSTONE_LDAP_USER_ENABLED_DEFAULT=TRUE
 
-# Specify 'y' if users are disabled (not enabled) in the Identity
-# service LDAP backend (inverts boolean-enalbed values).  Some LDAP
-# servers use a boolean lock attribute where "y" means an account is
-# disabled. Setting this to 'y' allows these lock attributes to be
-# used. This setting will have no effect if
-# "CONFIG_KEYSTONE_LDAP_USER_ENABLED_MASK" is in use. ['n', 'y']
-CONFIG_KEYSTONE_LDAP_USER_ENABLED_INVERT=n
+    # Specify 'y' if users are disabled (not enabled) in the Identity
+    # service LDAP backend (inverts boolean-enalbed values).  Some LDAP
+    # servers use a boolean lock attribute where "y" means an account is
+    # disabled. Setting this to 'y' allows these lock attributes to be
+    # used. This setting will have no effect if
+    # "CONFIG_KEYSTONE_LDAP_USER_ENABLED_MASK" is in use. ['n', 'y']
+    CONFIG_KEYSTONE_LDAP_USER_ENABLED_INVERT=n
 
-# Comma-separated list of attributes stripped from LDAP user entry
-# upon update.
-CONFIG_KEYSTONE_LDAP_USER_ATTRIBUTE_IGNORE=
+    # Comma-separated list of attributes stripped from LDAP user entry
+    # upon update.
+    CONFIG_KEYSTONE_LDAP_USER_ATTRIBUTE_IGNORE=
 
-# Identity service LDAP attribute mapped to default_project_id for
-# users.
-CONFIG_KEYSTONE_LDAP_USER_DEFAULT_PROJECT_ID_ATTRIBUTE=
+    # Identity service LDAP attribute mapped to default_project_id for
+    # users.
+    CONFIG_KEYSTONE_LDAP_USER_DEFAULT_PROJECT_ID_ATTRIBUTE=
 
-# Specify 'y' if you want to be able to create Identity service users
-# through the Identity service interface; specify 'n' if you will
-# create directly in the LDAP backend. ['n', 'y']
-CONFIG_KEYSTONE_LDAP_USER_ALLOW_CREATE=n
+    # Specify 'y' if you want to be able to create Identity service users
+    # through the Identity service interface; specify 'n' if you will
+    # create directly in the LDAP backend. ['n', 'y']
+    CONFIG_KEYSTONE_LDAP_USER_ALLOW_CREATE=n
 
-# Specify 'y' if you want to be able to update Identity service users
-# through the Identity service interface; specify 'n' if you will
-# update directly in the LDAP backend. ['n', 'y']
-CONFIG_KEYSTONE_LDAP_USER_ALLOW_UPDATE=n
+    # Specify 'y' if you want to be able to update Identity service users
+    # through the Identity service interface; specify 'n' if you will
+    # update directly in the LDAP backend. ['n', 'y']
+    CONFIG_KEYSTONE_LDAP_USER_ALLOW_UPDATE=n
 
-# Specify 'y' if you want to be able to delete Identity service users
-# through the Identity service interface; specify 'n' if you will
-# delete directly in the LDAP backend. ['n', 'y']
-CONFIG_KEYSTONE_LDAP_USER_ALLOW_DELETE=n
+    # Specify 'y' if you want to be able to delete Identity service users
+    # through the Identity service interface; specify 'n' if you will
+    # delete directly in the LDAP backend. ['n', 'y']
+    CONFIG_KEYSTONE_LDAP_USER_ALLOW_DELETE=n
 
-# Identity service LDAP attribute mapped to password.
-CONFIG_KEYSTONE_LDAP_USER_PASS_ATTRIBUTE=
+    # Identity service LDAP attribute mapped to password.
+    CONFIG_KEYSTONE_LDAP_USER_PASS_ATTRIBUTE=
 
-# DN of the group entry to hold enabled LDAP users when using enabled
-# emulation.
-CONFIG_KEYSTONE_LDAP_USER_ENABLED_EMULATION_DN=
+    # DN of the group entry to hold enabled LDAP users when using enabled
+    # emulation.
+    CONFIG_KEYSTONE_LDAP_USER_ENABLED_EMULATION_DN=
 
-# List of additional LDAP attributes for mapping additional attribute
-# mappings for users. The attribute-mapping format is
-# <ldap_attr>:<user_attr>, where ldap_attr is the attribute in the
-# LDAP entry and user_attr is the Identity API attribute.
-CONFIG_KEYSTONE_LDAP_USER_ADDITIONAL_ATTRIBUTE_MAPPING=
+    # List of additional LDAP attributes for mapping additional attribute
+    # mappings for users. The attribute-mapping format is
+    # <ldap_attr>:<user_attr>, where ldap_attr is the attribute in the
+    # LDAP entry and user_attr is the Identity API attribute.
+    CONFIG_KEYSTONE_LDAP_USER_ADDITIONAL_ATTRIBUTE_MAPPING=
 
 # Group subtree for the Identity service LDAP backend.
 CONFIG_KEYSTONE_LDAP_GROUP_SUBTREE=

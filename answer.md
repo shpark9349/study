@@ -10,7 +10,7 @@
     # Default password to be used everywhere (overridden by passwords set
     # for individual services or users).rtesrt
     CONFIG_DEFAULT_PASSWORD=redhat
-
+1
     # The amount of service workers/threads to use for each service.
     # Useful to tweak when you have memory constraints. Defaults to the
     # amount of cores on the system.

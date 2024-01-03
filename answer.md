@@ -8,7 +8,7 @@
     CONFIG_SSH_KEY=/root/.ssh/id_rsa.pub
 
     # Default password to be used everywhere (overridden by passwords set
-    # for individual services or users).
+    # for individual services or users).rtesrt
     CONFIG_DEFAULT_PASSWORD=redhat
 
     # The amount of service workers/threads to use for each service.
